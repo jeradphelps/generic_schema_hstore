@@ -1,8 +1,15 @@
 %h1 Item
 
 %hr 
+Id:&nbsp;
 = @item.id
 %br
+Item Category:&nbsp;
 = @item.item_category.name
+%br
+- @item.item_category.item_category_attributes.each do |attribute|
+  - if !@item.values.nil? && !@item.values[attribute.label].nil?
+    = attribute.label + ": " + @item.values[attribute.label]
+    %br
 %br
 

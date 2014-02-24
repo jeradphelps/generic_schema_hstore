@@ -1,2 +1,5 @@
 make controllers rails 4-ish
 decide if you want to use simple form or not
+destroys
+I don't think we need our datatype model as is right now.
+Change field type based on datatype
