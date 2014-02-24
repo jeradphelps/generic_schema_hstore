@@ -1,0 +1,7 @@
+= simple_form_for shallow_args(@item_category,@item) do |f|
+  = f.input :item_category_id, :as => :hidden, :value => @item.item_category.id
+
+  = f.submit "Submit"
+
+
+
