@@ -1,0 +1,11 @@
+%h1 Item Category
+
+%h2 Name:
+= @item_category.name
+
+%h2 Attributes:
+- @item_category.item_category_attributes.each do |item_category_attribute|
+  = item_category_attribute.label
+  = ": "
+  = item_category_attribute.item_category_attribute_data_type.label
+  %br

@@ -1,0 +1,10 @@
+= simple_form_for @item_category do |f|
+  = f.input :name
+  %br
+  %br
+  = f.simple_fields_for :item_category_attributes do |item_category_attribute_f|
+    = item_category_attribute_f.input :label
+    = item_category_attribute_f.association :item_category_attribute_data_type, :label_method => :label
+    %br  
+
+  = f.submit "Submit"
