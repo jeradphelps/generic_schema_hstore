@@ -1,5 +1,8 @@
-make controllers rails 4-ish
+make controllers rails 4-ish (lock down params)
 decide if you want to use simple form or not
 destroys
 I don't think we need our datatype model as is right now.
 Change field type based on datatype
+friendly_id for item_categories.
+Either a) don't allow renaming ItemCategoryAttribute fields, or b), make it so it works.
+  Example, if you change an attribute "size" to "size2", all your items would no longer display the size.

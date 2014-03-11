@@ -53,6 +53,10 @@ class ItemsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
+      # todo figure out a way to lock this down.
       params.require(:item).permit!
+      # params.require(:item).permit!.tap do |whitelisted|
+      #   whitelisted[:values] = params[:item][:values] 
+      # end
     end
 end

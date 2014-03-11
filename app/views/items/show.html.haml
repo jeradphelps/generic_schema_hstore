@@ -13,3 +13,7 @@ Item Category:&nbsp;
     %br
 %br
 
+
+= link_to "Edit", edit_item_path(@item)
+= " - "
+= link_to "Items", item_category_items_path(@item.item_category)
