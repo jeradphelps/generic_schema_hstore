@@ -2,7 +2,7 @@
   = f.input :item_category_id, :as => :hidden, :value => @item.item_category.id
 
   - @item_category.item_category_attributes.each do |attribute|
-    = f.input attribute.label
+    = f.input attribute.label, :as => attribute.item_category_attribute_data_type.rails_data_type
 
   = f.submit "Submit"
 
