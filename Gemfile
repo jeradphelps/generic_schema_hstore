@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.0.rc1'
 
 # Use sqlite3 as the database for Active Record
 gem 'pg'
@@ -32,13 +32,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'thin'
 gem 'haml'
 gem 'haml-rails'
 gem 'simple_form'
 
 group :development do
   gem 'pry-rails'
+  gem 'thin'
 end 
 
 # Use ActiveModel has_secure_password
