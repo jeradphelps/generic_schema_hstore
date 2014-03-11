@@ -11,14 +11,16 @@ class ItemsController < ApplicationController
   def new
     @item_category = ItemCategory.find(params[:item_category_id])
     @item = Item.new(:item_category_id => @item_category.id)
-
-    # @item.item_category.item_category_attributes.each do |item_category_attribute|
-    #   @item.item_attribute_values.build(:item_category_attribute_id => item_category_attribute.id)
-    # end
   end
 
   def create
-    @item = Item.new(item_params)
+    # This is kind of lame.  Why not just do the normal: @item = Item.new(item_params)
+    # well, were setting accessors to our dynamic attributes (ItemCategoryAttributes)
+    # In an after_initialize callback.  Since there is no before_initialize callback,
+    # this emulates that behavior.  Basically, initialize an item with a category id
+    # that triggers the callbacks and sets our accessors, then we can assign_attributes
+    @item = Item.new(:item_category_id => params[:item_category_id])
+    @item.assign_attributes(item_params)
 
     respond_to do |format|
       if @item.save
